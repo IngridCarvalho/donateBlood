@@ -1,0 +1,215 @@
+/* GLOBAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+
+    font-family: 'Roboto', sans-serif;
+
+    background-color: rgba(104, 209, 235, 0.274);
+}
+
+h1, h2{
+    color: #000000CC;
+}
+
+.blood, .logo, footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Titles */
+
+header h1, main h2 {
+    margin-bottom: 50px;
+}
+
+main h2 span{
+    color: #FF4F4F;
+}
+
+.form h2{
+    text-align: right;
+    color: #FFFFFFEE;
+    margin-right: 25px;
+    font-size: 18px;
+}
+
+header p{
+    font-size: 14px;
+}
+
+/* Structure */
+
+header, main, footer{
+    text-align: center;
+}
+
+header, .form, main{
+    margin: 0 auto 50px auto;
+    
+    width: 90%;
+    max-width: 500px;
+}
+
+/* HEADER */
+
+header button{
+    margin-top: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+
+    background-color: #FF4F4F;
+    color: #FFF;
+
+    font-weight: bold;
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 80px;
+    font-weight: bold;
+
+    position: relative;
+    padding: 15px;
+}
+
+.logo svg{
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+}
+
+.logo svg .st0{
+    fill: #FF4F4F;
+}
+
+.logo svg .st1{
+    animation: animacao 1s ease infinite alternate;
+}
+
+@keyframes animacao {
+    from { 
+     fill: #FF4F4F;
+   }
+    to { 
+     fill: rgba(255, 79, 79, 0.445);
+   }
+}
+
+/* FORM */
+
+section.form{ 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    background-color: #FF4F4F;
+
+    padding: 2% 5%;
+
+    border-radius: 6px;
+}
+
+form input,
+form button{
+    width: 100%;
+
+    margin-bottom: 4px;
+
+    padding: 8px 16px;
+
+    border-radius: 4px;
+    border: 1px #FFFFFF88 solid;
+}
+
+form input{
+    background-color: transparent;
+}
+
+form input::placeholder{
+    color: #FFFFFFAA;
+}
+
+form button{
+    font-weight: bold;
+}
+
+/* MAIN */
+
+main .donors{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.blood{
+    color: #FF4F4F;
+    font-weight: bold;
+    font-size: 12px;
+
+    position: relative;
+}
+
+.blood::before{
+    content: "";
+    background-color: rgba(255, 79, 79, 0.185);
+
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+
+    /* drop */
+
+    border-radius: 50%;
+    border-top-right-radius: 0;
+
+    transform: rotate(-45deg);
+}
+
+.donor p{
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* footer */
+
+footer{
+    margin-top: auto;
+    padding: 16px;
+    border: 1px solid #eee;
+}
+
+footer img{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+
+/* functionalities with js */
+
+section.form{
+    transition: all 300ms;
+}
+
+section.form.hide{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: -50px;
+}
